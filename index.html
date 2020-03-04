@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="module" src="main.js"></script>
+    <title>GitHub Issue Link Generator</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="row">
+          <div class="col s12">
+            <a href="#!" class="brand-logo hide-on-small-only">GitHub Issue Link Generator</a>
+            <a href="#" data-target="mobile" class="sidenav-trigger"
+              ><i class="material-icons">menu</i></a
+            >
+            <ul class="right hide-on-med-and-down">
+              <li><a href="https://github.com/joshsaintjacque">GitHub</a></li>
+              <li><a href="https://twitter.com/joshsaintjacque">Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/josh-saint-jacque-61208a17">LinkedIn</a></li>
+              <li><a href="http://reactingonrails.com/">Reacting on Rails Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile">
+      <li><a href="mailto:joshsaintjacque@gmail.com">Josh Saint Jacque /</a></li>
+      <li><a class="right-align" href="https://github.com/joshsaintjacque">GitHub</a></li>
+      <li><a class="right-align" href="https://twitter.com/joshsaintjacque">Twitter</a></li>
+      <li>
+        <a class="right-align" href="https://www.linkedin.com/in/josh-saint-jacque-61208a17"
+          >LinkedIn</a
+        >
+      </li>
+      <li><a class="right-align" href="http://reactingonrails.com/">Reacting on Rails Blog</a></li>
+    </ul>
+
+    <div class="row">
+      <div class="col s12 hide-on-med-and-up">
+        <h3>GitHub Issue Link Generator</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Easily generate links that pre-fill GitHub issues</span>
+            <p>
+              Fill out the fields below and we'll automatically generate a link to create a GitHub
+              issue. All fields are optional.
+            </p>
+
+            <div class="row"></div>
+
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <label for="org">GitHub Org</label>
+                    <input id="org" type="text" class="validate" required />
+                  </div>
+                  <div class="input-field col s6">
+                    <label for="repo">GitHub Repo</label>
+                    <input id="repo" type="text" class="validate" required />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="title">Title</label>
+                    <input id="title" type="text" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="labels">Labels</label>
+                    <input id="labels" type="text" />
+                    <span class="helper-text">Comma separated</span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s6">
+                    <label for="template">Template</label>
+                    <input id="template" type="text" />
+                  </div>
+                  <div class="input-field col s6">
+                    <label for="milestone">Milestone</label>
+                    <input id="milestone" type="text" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="assignees">Assignees</label>
+                    <input id="assignees" type="text" />
+                    <span class="helper-text">Comma separated</span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="projects">Projects</label>
+                    <input id="projects" type="text" />
+                    <span class="helper-text">Comma separated</span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea id="body" class="materialize-textarea"></textarea>
+                    <label for="body">Body</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="row">
+              <div class="col s12">
+                <p>
+                  To learn more about the parameters used to generate this link, see the official
+                  <a
+                    href="https://help.github.com/en/github/managing-your-work-on-github/about-automation-for-issues-and-pull-requests-with-query-parameters"
+                    >documentation</a
+                  >.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Your GitHub Issue Link</span>
+            <div id="output">
+              Your link will be generated as you fill out the form above/to the left.
+            </div>
+          </div>
+
+          <div class="card-action right-align">
+            <a
+              class="waves-effect waves-light card_action__button card_action__button--copy btn disabled"
+              >Copy Link</a
+            >
+            <a
+              class="waves-effect waves-light card_action__button
+            card_action__button--open btn disabled"
+              target="_blank"
+              >Open Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div id="output"></div>
+    </div>
+  </body>
+</html>
